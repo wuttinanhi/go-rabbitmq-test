@@ -20,8 +20,7 @@ func main() {
 	mode := flag.String("mode", "default", "mode: producer or consumer")
 	flag.Parse()
 
-	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
-
+	conn, err := amqp.Dial("amqp://rabbitmquser:rabbitmqpassword@localhost:5672/")
 	PanicIfError(err)
 	defer conn.Close()
 
